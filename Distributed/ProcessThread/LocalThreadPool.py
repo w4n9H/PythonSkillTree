@@ -7,6 +7,7 @@
 @create: 16/7/4
 hail hydra!
 pip install threadpool
+源码中有提供一个示例
 """
 
 __author__ = "mango"
