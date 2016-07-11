@@ -2,10 +2,10 @@
 
 ## 1.基础
 ### 1.1.Python语言规范
-+ google python 语言规范    ![传送门](http://zh-google-styleguide.readthedocs.org/en/latest/google-python-styleguide/python_style_rules/)
++ google python 语言规范    [传送门](http://zh-google-styleguide.readthedocs.org/en/latest/google-python-styleguide/python_style_rules/)
 
 ### 1.2.Python风格规范
-+ google python 风格规范    ![传送门](http://zh-google-styleguide.readthedocs.org/en/latest/google-python-styleguide/python_style_rules/)
++ google python 风格规范    [传送门](http://zh-google-styleguide.readthedocs.org/en/latest/google-python-styleguide/python_style_rules/)
 
 ### 1.3.模块导入Demo
 + 跨目录，以及多级目录之间的相互导入，代码组件化
@@ -19,14 +19,14 @@
 
 ## 2.HTTP
 ### 2.1.HTTP API
-+ HTTP API 设计指南    ![传送门](http://www.oschina.net/translate/http-api-design)
-+ RESTful API 设计指南    ![传送门](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
++ HTTP API 设计指南    [传送门](http://www.oschina.net/translate/http-api-design)
++ RESTful API 设计指南    [传送门](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
 ## 3.服务端
 ### 3.1.Tornado
 + Tornado 标准模板
-+ Tornado Github ![传送门](https://github.com/tornadoweb/tornado)
-+ Tornado 中文教程 ![传送门](https://github.com/alioth310/itt2zh)
++ Tornado Github [传送门](https://github.com/tornadoweb/tornado)
++ Tornado 中文教程 [传送门](https://github.com/alioth310/itt2zh)
 
 ### 3.2.Bottle
 + bottle 标准模块
