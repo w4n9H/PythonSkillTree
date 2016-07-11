@@ -27,9 +27,12 @@
 + Tornado 标准模板
 + Tornado Github [传送门](https://github.com/tornadoweb/tornado)
 + Tornado 中文教程 [传送门](https://github.com/alioth310/itt2zh)
++ Tornado 文档 [传送门](http://www.tornadoweb.org/)
 
 ### 3.2.Bottle
-+ bottle 标准模块
++ bottle 标准模板 
++ Bottle Github [传送门](https://github.com/bottlepy/bottle)
++ Bottle 中文教程(似乎是个半成品) [传送门](https://github.com/TaceyWong/Bottle_Doc_zh)
 
 ### 3.3.Flask
 + flask 标准模板
