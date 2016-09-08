@@ -12,6 +12,9 @@ __author__ = "mango"
 __version__ = "0.1"
 
 
+import os
+
+
 class GenericInputData(object):
     def read(self):
         raise NotImplementedError    # read 方法必须由子类实现
@@ -29,8 +32,14 @@ class PathInputData(GenericInputData):
     def read(self):
         return open(self.path).read()
 
+    @classmethod
+    def generate_inputs(cls, config):
+        data_dir = config['data_dir']
+        for name in os.listdir(data_dir):
+            yield cls(os.path.join(data_dir, name))
 
-class Worker(object):
+
+class GenericWorker(object):
     def __init__(self, input_data):
         self.input_data = input_data
         self.result = None
@@ -41,27 +50,21 @@ class Worker(object):
     def reduce(self, other):
         raise NotImplementedError
 
+    @classmethod
+    def create_workers(cls, input_class, config):
+        workers = []
+        for input_data in input_class.generate_inputs(config):
+            workers.append(cls(input_data))
+        return workers
 
-class LineCountWorker(Worker):
+
+class LineCountWorker(GenericWorker):
     def map(self):
         data = self.input_data.read()
         self.result = data.count('\n')
 
     def reduce(self, other):
         self.result += self.result
-
-
-def generate_imputs(data_dir):
-    import os
-    for name in os.listdir(data_dir):
-        yield PathInputData(os.path.join(data_dir, name))
-
-
-def create_workers(input_list):
-    workers = []
-    for input_data in input_list:
-        workers.append(LineCountWorker(input_data))
-    return workers
 
 
 def execute(workers):
@@ -75,8 +78,11 @@ def execute(workers):
     return first.result
 
 
-def mapreduce(data_dir):
-    inputs = generate_imputs(data_dir)
-    workers = create_workers(inputs)
+def map_reduce(worker_class, input_class, config):
+    workers = worker_class.create_workers(input_class, config)
     return execute(workers)
+
+
+config = {'data_dir': ''}
+map_reduce(LineCountWorker, PathInputData, config)
 
